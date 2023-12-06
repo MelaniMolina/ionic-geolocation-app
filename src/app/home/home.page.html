@@ -1,20 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Mi Ubicacion</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="ion-padding">
+    <ion-button (click)="getCurrentCoordinates()" expand="block">
+      Obtener Ubicacion
+    </ion-button>
+    <ion-list>
+      <ion-list-header>
+        Coordenadas de la Ubicacion
+      </ion-list-header>
+      <ion-item>
+        <ion-label>
+          Latitud
+        </ion-label>
+        <ion-badge color="danger" slot="end">{{latitude}}</ion-badge>
+      </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <ion-item>
+        <ion-label>
+          Longitud
+        </ion-label>
+        <ion-badge color="danger" slot="end">{{longitude}}</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Google Maps</ion-label>
+        <a (click)="abrirGoogleMaps()">Abrir Google Maps</a>
+    </ion-item>
+
+    </ion-list>
   </div>
 </ion-content>
